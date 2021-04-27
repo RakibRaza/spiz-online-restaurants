@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Grid,
+  Hidden,
   makeStyles,
   Typography,
 } from "@material-ui/core";
@@ -56,6 +57,7 @@ const AboutUs = () => {
     <Box style={{ background: "#fffdf9" }} py={10}>
       <Container>
         <Grid container spacing={4} alignItems="center">
+          <Hidden xsDown>
           <Grid item xs={12} md={6}>
             <Box className={classes.imgContainer}>
               <img className="img" src={restant} alt="Restaurant" />
@@ -64,7 +66,8 @@ const AboutUs = () => {
               <img className="img3" src={restant4} alt="" />
               <img className="img4" src={restant5} alt="" />
             </Box>
-          </Grid>
+            </Grid>
+            </Hidden>
           <Grid item md={6}>
             <Box mb={4}>
               <Typography gutterBottom variant="h4">

@@ -48,7 +48,7 @@ const Food = ({ image, name, price }) => {
           alt={name}
         />
         <Box p={2}>
-          <Typography gutterBottom variant="h6">
+          <Typography style={{fontFamily: "'Poppins', sans-serif",fontWeight:'bold'}} gutterBottom variant="h6">
             {name}
           </Typography>
           <Box

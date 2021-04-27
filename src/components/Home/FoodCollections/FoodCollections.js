@@ -46,6 +46,17 @@ const useStyles = makeStyles((theme) => ({
     background: "none",
     boxShadow: "none",
     paddingTop: theme.spacing(5),
+    '& .Mui-selected': {
+      backgroundColor: "#ffbe00",
+        padding: "12px 35px 11px",
+        borderRadius: "50px",
+        color: "#fff",
+        textTransform: "capitalize",
+        fontSize: "15px",
+    },
+    '& .MuiTabs-indicator': {
+      display: 'none'
+    }
   },
 }));
 const FoodCollections = () => {
@@ -70,7 +81,6 @@ const FoodCollections = () => {
           <Tabs
             value={value}
             onChange={handleChange}
-            indicatorColor="primary"
             aria-label="full width tabs example"
             centered
           >

@@ -53,7 +53,7 @@ const Chef = ({ image, name, designation }) => {
       <Box className={classes.root}>
         <img src={image} alt={name} />
         <Box className="info">
-          <Typography gutterBottom variant="h6">
+          <Typography style={{fontFamily: "'Poppins', sans-serif",fontWeight:'bold'}} gutterBottom variant="h6">
             {name}
           </Typography>
           <Typography>{designation}</Typography>
