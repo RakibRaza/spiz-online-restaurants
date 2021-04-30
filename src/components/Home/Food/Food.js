@@ -11,6 +11,8 @@ import React, { useState } from "react";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { increase, decrease, addToCart } from "../../../Redux/cartAction";
+import { useDispatch } from 'react-redux'
 const useStyles = makeStyles((theme) => ({
   icon: {
     "& > *": {
@@ -21,18 +23,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Food = ({ image, name, price }) => {
+const Food = ({ id, image, name, price, quantity }) => {
+  const dispatch = useDispatch()
   const classes = useStyles();
-  const [quantity, setQuantity] = useState(1);
-
-  const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-  const handleIncrease = () => {
-    setQuantity(quantity + 1);
-  };
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Box component={Paper} style={{ borderRadius: "16px" }}>
@@ -48,7 +41,7 @@ const Food = ({ image, name, price }) => {
           alt={name}
         />
         <Box p={2}>
-          <Typography style={{fontFamily: "'Poppins', sans-serif",fontWeight:'bold'}} gutterBottom variant="h6">
+          <Typography style={{ fontWeight: 'bold' }} gutterBottom variant="h6">
             {name}
           </Typography>
           <Box
@@ -62,7 +55,7 @@ const Food = ({ image, name, price }) => {
               ${price}
             </Typography>
             <Box className={classes.icon}>
-              <IconButton onClick={handleDecrease}>
+              <IconButton onClick={() => dispatch(decrease(id))}>
                 <RemoveIcon />
               </IconButton>
               <Typography
@@ -72,13 +65,13 @@ const Food = ({ image, name, price }) => {
               >
                 {quantity}
               </Typography>
-              <IconButton onClick={handleIncrease}>
+              <IconButton onClick={() => dispatch(increase(id))}>
                 <AddIcon />
               </IconButton>
             </Box>
           </Box>
           <Box align="center" mt={2}>
-            <Button endIcon={<ShoppingCartIcon />} variant="contained">
+            <Button onClick={() => dispatch(addToCart(id))} endIcon={<ShoppingCartIcon />} variant="contained">
               Add to cart
             </Button>
           </Box>

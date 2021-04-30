@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(5),
     '& .Mui-selected': {
       backgroundColor: "#ffbe00",
-        padding: "12px 35px 11px",
-        borderRadius: "50px",
-        color: "#fff",
-        textTransform: "capitalize",
-        fontSize: "15px",
+      padding: "12px 35px 11px",
+      borderRadius: "50px",
+      color: "#fff",
+      textTransform: "capitalize",
+      fontSize: "15px",
     },
     '& .MuiTabs-indicator': {
       display: 'none'

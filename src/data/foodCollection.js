@@ -14,6 +14,7 @@ const foodCollection = [
     price: "25",
     category: "cake",
     image: collection1,
+    quantity: 1
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const foodCollection = [
     price: "32",
     category: "cake",
     image: collection6,
+    quantity: 1
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const foodCollection = [
     price: "23",
     category: "cake",
     image: collection4,
+    quantity: 1
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const foodCollection = [
     price: "27",
     category: "cake",
     image: collection8,
+    quantity: 1
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const foodCollection = [
     price: "20",
     category: "dessert",
     image: collection3,
+    quantity: 1
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const foodCollection = [
     price: "35",
     category: "dessert",
     image: collection5,
+    quantity: 1
   },
   {
     id: 7,
@@ -56,6 +62,7 @@ const foodCollection = [
     price: "15",
     category: "drinks",
     image: collection2,
+    quantity: 1
   },
   {
     id: 8,
@@ -63,6 +70,7 @@ const foodCollection = [
     price: "28",
     category: "drinks",
     image: collection7,
+    quantity: 1
   },
 ];
 export default foodCollection;

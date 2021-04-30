@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     width: "250px",
   },
   appBar: {
-    background: "none",
+    background: "#fff",
     boxShadow: "none",
   },
   menu: {
@@ -40,7 +40,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar className={classes.appBar} position="static">
+    <AppBar className={classes.appBar}>
       <Container>
         <Toolbar>
           <Box style={{ flexGrow: 1 }}>
@@ -51,8 +51,8 @@ const NavBar = () => {
               <Button component={Link} to="/">
                 Home
               </Button>
-              <Button component={Link} to="/about">
-                About
+              <Button component={Link} to="/cart">
+                cart
               </Button>
               <Button>Contact</Button>
               <Badge badgeContent={4} style={{ color: "#000" }}>

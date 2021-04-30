@@ -26,9 +26,7 @@ export const theme = createMuiTheme({
     h5: {
       fontFamily: "'Playfair Display', serif",
     },
-    h6: {
-      fontFamily: "'Playfair Display', serif",
-    },
+
   },
   overrides: {
     MuiButton: {

@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { theme } from "./theme";
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -11,6 +12,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
         <CssBaseline />

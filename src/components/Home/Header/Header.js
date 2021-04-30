@@ -27,11 +27,12 @@ const tutorialSteps = [
 ];
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "calc(100vh - 64px)",
+    minHeight: "calc(100vh)",
+    marginTop:'64px'
   },
   btn: {
     "& > *": {
-      margin: theme.spacing(0, 3, 0, 0),
+      margin: theme.spacing(2,3,0,0),
     },
     "& .call": {
       background: "none",

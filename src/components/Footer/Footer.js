@@ -8,11 +8,8 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import logo from "../../images/logo.png";
-import PhoneInTalkOutlinedIcon from "@material-ui/icons/PhoneInTalkOutlined";
 import { BiPhoneCall, BiMessageDetail, BiMap } from "react-icons/bi";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-
-import { Link } from "react-router-dom";
 import FooterCol from "./FooterCol";
 const useStyles = makeStyles((theme) => ({
   iconBtn: {
