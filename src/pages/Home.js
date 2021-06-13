@@ -1,6 +1,5 @@
 import { Container } from "@material-ui/core";
 import React from "react";
-import Footer from "../components/Footer/Footer";
 import AboutUs from "../components/Home/AboutUs/AboutUs";
 import Blogs from "../components/Home/Blogs/Blogs";
 import Chefs from "../components/Home/Chefs/Chefs";
@@ -37,7 +36,6 @@ const Home = () => {
         <Blogs />
       </Container>
       <Subscribe />
-      <Footer />
     </>
   );
 };

@@ -4,12 +4,15 @@ import App from "./App";
 import { Provider } from 'react-redux';
 import { createStore } from "redux";
 import cartReducer from "./Redux/cartReducer";
+import { AuthProvider } from "./context/AuthContext";
 const store = createStore(cartReducer)
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

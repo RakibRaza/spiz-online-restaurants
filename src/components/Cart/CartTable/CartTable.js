@@ -8,12 +8,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Box, Container, Typography } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import ClearIcon from '@material-ui/icons/Clear';
+import { Button } from '@material-ui/core';
+import { getTotals, removeFromCart } from '../../../Redux/cartAction';
 
 const useStyles = makeStyles(theme => ({
   table: {
     minWidth: 650,
-
     '& th': {
       backgroundColor: theme.palette.primary.main,
       color: '#fff',
@@ -27,21 +29,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 const CartTable = () => {
   const classes = useStyles();
+  const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
+  const totalAmount = useSelector(state => state.totalAmount)
+
+  const handleClick = (id) => {
+    dispatch(removeFromCart(id))
+    dispatch(getTotals())
+  }
   console.log(cart)
   return (
     <Container component={Box} py={10}>
@@ -58,19 +55,25 @@ const CartTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell >
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">*</TableCell>
+            {cart.map((item) => (
+              <TableRow key={item.id}>
+                <TableCell><Typography> {item.name}</Typography></TableCell>
+                <TableCell><Typography>{item.quantity}</Typography></TableCell>
+                <TableCell><Typography>${item.price * item.quantity}</Typography></TableCell>
+                <TableCell><ClearIcon onClick={() => handleClick(item.id)} style={{ cursor: 'pointer' }} /></TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <Box mt={5} align='center'>
+        <Typography variant='h6'>Go for Order?</Typography>
+        <Typography gutterBottom variant='h3'>Total Order</Typography>
+        <Typography variant='h5'>Total: ${totalAmount}</Typography>
+        <Box mt={4}>
+          <Button variant='contained'>Checkout Items</Button>
+        </Box>
+      </Box>
     </Container>
   );
 }
