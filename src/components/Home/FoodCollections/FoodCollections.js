@@ -7,9 +7,13 @@ import {
   Box,
   Typography,
   makeStyles,
+  Button,
 } from "@material-ui/core";
 import data from "../../../data/foodCollection";
 import FoodCollection from "../FoodCollection/FoodCollection";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { Link } from "react-router-dom";
+
 const categories = data.map((item) => item.category);
 const uniqueCategories = [...new Set(categories)];
 function TabPanel(props) {
@@ -95,6 +99,9 @@ const FoodCollections = () => {
           </TabPanel>
         ))}
       </div>
+      <Box align='center'>
+        <Button component={Link} to='/cart' endIcon={<ShoppingCartIcon />} variant='contained'>View Cart</Button>
+      </Box>
     </Box>
   );
 };

@@ -73,7 +73,7 @@ const Login = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <TextField
               margin="normal"
-              label="Email"
+              placeholder='Email'
               fullWidth
               {...register('email', {
                 required: 'Email is required.', pattern: {
@@ -86,7 +86,7 @@ const Login = () => {
             />
             <TextField
               margin="normal"
-              label="Password"
+              placeholder="Password"
               fullWidth
               type="password"
               {...register('password', {

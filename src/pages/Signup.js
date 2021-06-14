@@ -77,7 +77,7 @@ const Signup = () => {
                 }
               })}
               margin="normal"
-              label="First Name"
+              placeholder="First Name"
               fullWidth
               helperText={errors.firstName?.message}
               error={Boolean(errors.firstName)}
@@ -91,7 +91,7 @@ const Signup = () => {
                 }
               })}
               margin="normal"
-              label="Last Name"
+              placeholder="Last Name"
               fullWidth
               helperText={errors.lastName?.message}
               error={Boolean(errors.lastName)}
@@ -106,7 +106,7 @@ const Signup = () => {
                 }
               })}
               margin="normal"
-              label="Email"
+              placeholder="Email"
               fullWidth
               helperText={errors.email?.message}
               error={Boolean(errors.email)}
@@ -122,7 +122,7 @@ const Signup = () => {
               })}
               type="password"
               margin="normal"
-              label="Password"
+              placeholder="Password"
               fullWidth
               helperText={errors.password?.message}
               error={Boolean(errors.password)}
@@ -136,7 +136,7 @@ const Signup = () => {
               })}
               type="password"
               margin="normal"
-              label="Confirm Password"
+              placeholder="Confirm Password"
               fullWidth
               helperText={errors.confirmPassword?.message}
               error={Boolean(errors.confirmPassword)}
